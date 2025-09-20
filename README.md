@@ -12,8 +12,6 @@
 
 I gained an initial shell via anonymous FTP + web upload, discovered credentials inside a pcap file, switched to the `lennie` user, then abused a root-run script (`/etc/print.sh`) to obtain `root`.
 
-* **User flag:** `THM{03ce3d619b80ccbfb3b7fc81e46c0e79}`
-* **Root flag:** `THM{f963aaa6a430f210222158ae15c3d76d}`
 
 This write-up documents the reconnaissance, exploitation, and remediation steps.
 
@@ -104,7 +102,6 @@ Once `su` succeeded, I had an interactive shell as `lennie`. I retrieved the use
 
 ```bash
 cat /home/lennie/user.txt
-# THM{03ce3d619b80ccbfb3b7fc81e46c0e79}
 ```
 
 ---
@@ -142,17 +139,12 @@ After the script ran (triggered by whatever scheduler on the box), `/home/lennie
 
 ```bash
 cat /home/lennie/root.txt
-# THM{f963aaa6a430f210222158ae15c3d76d}
+
 ```
 
 ---
 
 ## Post-exploitation
-
-* Flags collected:
-
-  * `user.txt`: `THM{03ce3d619b80ccbfb3b7fc81e46c0e79}`
-  * `root.txt`: `THM{f963aaa6a430f210222158ae15c3d76d}`
 
 * Always follow responsible lab cleanup (see next section).
 
